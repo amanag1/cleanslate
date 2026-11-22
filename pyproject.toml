@@ -15,6 +15,9 @@ dependencies = [
   "pandas>=2.2,<3.0",
   "openpyxl>=3.1,<4.0",
   "python-multipart>=0.0.9",
+  "SQLAlchemy>=2.0,<3.0",
+  "psycopg[binary]>=3.2,<4.0",
+  "streamlit>=1.38,<2.0",
 ]
 
 [project.optional-dependencies]
