@@ -8,23 +8,30 @@ jobs:
   lite-tests:
     name: Lite edition tests
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: cleanslate-lite
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: python -m pip install -r requirements-lite.txt
-      - run: python -m unittest discover -s editions/lite/tests -p "test_*.py" -v
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -p "test_*.py" -v
 
   production-tests:
     name: Production edition tests
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: cleanslate-production
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
           cache: pip
+          cache-dependency-path: cleanslate-production/pyproject.toml
       - run: python -m pip install -e ".[dev]"
       - run: python -m compileall -q src tests
       - run: python -m pytest -v
