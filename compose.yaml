@@ -4,7 +4,7 @@ services:
     environment:
       POSTGRES_DB: cleanslate
       POSTGRES_USER: cleanslate
-      POSTGRES_PASSWORD: local-only-change-before-deployment
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -15,7 +15,7 @@ services:
   api:
     build: .
     environment:
-      DATABASE_URL: postgresql+psycopg://cleanslate:local-only-change-before-deployment@db:5432/cleanslate
+      DATABASE_URL: postgresql+psycopg://cleanslate:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@db:5432/cleanslate
       CLEANSLATE_MAX_UPLOAD_BYTES: "26214400"
     ports:
       - "8000:8000"
