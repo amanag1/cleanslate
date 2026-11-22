@@ -1,0 +1,15 @@
+replicaCount: 1
+image:
+  repository: cleanslate
+  tag: "0.1.0"
+  pullPolicy: IfNotPresent
+service:
+  type: ClusterIP
+  port: 8000
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+  limits:
+    cpu: 1000m
+    memory: 1Gi
