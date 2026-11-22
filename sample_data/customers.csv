@@ -1,0 +1,6 @@
+Customer ID,Full Name,Email,City
+101, Alice Smith ,alice@example.com, New Delhi
+102,Bob Jones,bob@example.com, Mumbai
+103,Carol Lee,not-an-email,Bengaluru
+103,Carol Lee,not-an-email,Bengaluru
+104,,david@example.com,Pune
