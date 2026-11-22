@@ -1,7 +1,6 @@
 from io import BytesIO
 from fastapi import APIRouter, File, HTTPException, UploadFile
 from fastapi.responses import StreamingResponse
-import pandas as pd
 
 from cleanslate.engine.cleaner import clean_dataframe
 from cleanslate.engine.profiler import profile_dataframe
