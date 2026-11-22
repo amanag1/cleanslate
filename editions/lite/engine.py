@@ -2,7 +2,7 @@
 import re
 import pandas as pd
 
-EMAIL_RE = re.compile(r"^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$")
+EMAIL_RE = re.compile(r"^[^\s@]+@[^\s@]+\.[^\s@]+$")
 
 def profile_dataframe(frame: pd.DataFrame) -> dict:
     columns = []
